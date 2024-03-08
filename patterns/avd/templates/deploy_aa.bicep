@@ -74,6 +74,7 @@ var RoleAssignments = {
 // '17d1049b-9a84-46fb-8f53-869881c3d3ab'  // Storage Account Contributor
 // '92aaf0da-9dab-42b6-94a3-d43ce8d16293'  // Log Analtyics Contributor - allows writing to workspace for Host Pool and Storage Logic Apps
 
+var SubscriptionId = subscription().subscriptionId
 
 var varJobScheduleParamsHostPool = {
     CloudEnvironment: CloudEnvironment
@@ -86,7 +87,6 @@ var varJobScheduleParamsAzFiles = {
     StorageAccountResourceIDs: string(varStorAcctResIDsString)
 }
 
-var SubscriptionId = subscription().subscriptionId
 var varScheduleName = 'AVD_Chk-'
 var varTimeZone = varTimeZones[Location]
 var varTimeZones = {

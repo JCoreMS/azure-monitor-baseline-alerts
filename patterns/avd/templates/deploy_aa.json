@@ -5,7 +5,7 @@
     "_generator": {
       "name": "bicep",
       "version": "0.25.53.49325",
-      "templateHash": "3052364895991107269"
+      "templateHash": "3605923251199160106"
     }
   },
   "parameters": {
@@ -130,6 +130,7 @@
         "GUID": "92aaf0da-9dab-42b6-94a3-d43ce8d16293"
       }
     },
+    "SubscriptionId": "[subscription().subscriptionId]",
     "varJobScheduleParamsHostPool": {
       "CloudEnvironment": "[variables('CloudEnvironment')]",
       "SubscriptionId": "[variables('SubscriptionId')]"
@@ -139,7 +140,6 @@
       "CloudEnvironment": "[variables('CloudEnvironment')]",
       "StorageAccountResourceIDs": "[string(variables('varStorAcctResIDsString'))]"
     },
-    "SubscriptionId": "[subscription().subscriptionId]",
     "varScheduleName": "AVD_Chk-",
     "varTimeZone": "[variables('varTimeZones')[parameters('Location')]]",
     "varTimeZones": {
