@@ -86,10 +86,11 @@
 									"name": "_ArtifactsLocation",
 									"type": "Microsoft.Common.TextBox",
 									"label": "Automation Account Scripts Location",
+									"defaultValue": "https://github.com/Azure/azure-monitor-baseline-alerts/blob/main/patterns/avd/scripts/",
 									"subLabel": "",
 									"toolTip": "Blob Storage Location/ URL container with Get-HostPoolInfo.ps1 and Get-StorAcctInfov2.ps1 needed for deployment and automation account setup.",
 									"constraints": {
-										"required": false,
+										"required": "[equals(steps('AutoAcctConfig').optionCustomScriptLocation, true)]",
 										"regex": "",
 										"validationMessage": ""
 									},
@@ -142,31 +143,6 @@
 							"visible": true
 						},
 						{
-							"name": "Environment",
-							"type": "Microsoft.Common.DropDown",
-							"label": "Environment Type",
-							"defaultValue": "t",
-							"toolTip": "The environment is which these resources will be deployed, i.e. Test, Production, Development. This will yield a first letter desigation in some of the resource naming.",
-							"constraints": {
-								"required": true,
-								"allowedValues": [
-									{
-										"label": "Development",
-										"value": "d"
-									},
-									{
-										"label": "Production",
-										"value": "p"
-									},
-									{
-										"label": "Test",
-										"value": "t"
-									}
-								]
-							},
-							"visible": true
-						},
-						{
 							"name": "LogAnalyticsWorkspaceResource",
 							"type": "Microsoft.Solutions.ResourceSelector",
 							"label": "Insights Log Analytics Workspace",
@@ -177,15 +153,6 @@
 							},
 							"infoMessages": [],
 							"visible": true
-						},
-						{
-							"name": "optionVMMetrics",
-							"type": "Microsoft.Common.CheckBox",
-							"label": "VMs in separate Resource Group(s)",
-							"constraints": {
-								"required": false,
-								"validationMessage": "Selecting this will determine if multiple VM Metric based Alerts can be deployed given the scope for VM resources is per Resource Group."
-							}
 						},
 						{
 							"name": "AVDResourceGroupId",
@@ -200,9 +167,18 @@
 							"defaultDescription": "A value for selection",
 							"constraints": {
 								"allowedValues": "[map(steps('basics').ResGroupsApi.value, (item) => parse(concat('{\"label\":\"', item.name, '\",\"value\":\"', item.id, '\"}')))]",
-								"required": "[if(steps('AutoAcctConfig').optionVMMetrics, false, true)]"
+								"required": true
 							},
-							"visible": "[if(steps('AutoAcctConfig').optionVMMetrics, false, true)]"
+							"visible": true
+						},
+						{
+							"name": "optionVMMetrics",
+							"type": "Microsoft.Common.CheckBox",
+							"label": "VMs in separate Resource Group(s)",
+							"constraints": {
+								"required": false,
+								"validationMessage": "Selecting this will determine if multiple VM Metric based Alerts can be deployed given the scope for VM resources is per Resource Group."
+							}
 						},
 						{
 							"name": "optionAzFiles",
@@ -296,13 +272,8 @@
 							"resources": [
 								"Microsoft.Resources/resourceGroups",
 								"Microsoft.Automation/automationAccounts",
-								"Microsoft.Insights/diagnosticsettings",
 								"Microsoft.ManagedIdentity/userAssignedIdentities",
 								"Microsoft.Authorization/roleAssignments",
-								"Microsoft.Insights/actionGroups",
-								"Microsoft.Resources/deploymentScripts",
-								"Microsoft.Insights/metricAlerts",
-								"Microsoft.Insights/scheduledQueryRules",
 								"Microsoft.Automation/automationAccounts/runbooks",
 								"Microsoft.Logic/workflows"
 							],
@@ -314,15 +285,14 @@
 		},
 		"outputs": {
 			"parameters": {
-				"_ArtifactsLocation": "[steps('AutoAcctConfig').CustomScriptInfo._ArtifactsLocation]",
-				"_ArtifactsLocationSasToken": "[steps('AutoAcctConfig').CustomScriptInfo._ArtifactsLocationSasToken]",
+				"_artifactsLocation": "[steps('AutoAcctConfig').CustomScriptInfo._ArtifactsLocation]",
+				"_artifactsLocationSasToken": "[steps('AutoAcctConfig').CustomScriptInfo._ArtifactsLocationSasToken]",
 				"AllResourcesSameRG": "[if(steps('AutoAcctConfig').optionVMMetrics, false, true)]",
 				"AVDResourceGroupId": "[steps('AutoAcctConfig').AVDResourceGroupId]",
-				"Environment": "[steps('AutoAcctConfig').Environment]",
 				"HostPoolInfo": "[steps('AutoAcctConfig').hostPoolInfo]",
-				"HostPools": "[steps('AutoAcctConfig').HostPools]",
+				"Location": "[steps('basics').resourceScope.location.name]",
 				"LogAnalyticsWorkspaceResourceId": "[steps('AutoAcctConfig').LogAnalyticsWorkspaceResource.id]",
-				"ResourceGroupName": "[steps('AutoAcctConfig').resourceGroupNameExisting]",
+				"ResourceGroupId": "[steps('AutoAcctConfig').resourceGroupNameExisting]",
 				"StorageAccountResourceIds": "[steps('AutoAcctConfig').StorageAccountResourceIds]",
 				"Tags": "[steps('AutoAcctConfig').Tags]"
 			},

@@ -1,0 +1,134 @@
+[
+    {
+        "HealthCheckName": 0,
+        "HealthCheckResult": 1,
+        "AdditionalFailureDetails": {
+            "Message": "SessionHost healthy: is joined to domain ≤corefamily.net≥",
+            "ErrorCode": 0,
+            "LastHealthCheckInUTC": "2024-03-15T19:29:52.7280025Z"
+        },
+        "AdditionalDetails": null,
+        "IsProvisioningHealthCheck": false
+    },
+    {
+        "HealthCheckName": 1,
+        "HealthCheckResult": 1,
+        "AdditionalFailureDetails": {
+            "Message": "SessionHost healthy: domain trust check succeeded for domain ≤corefamily.net≥",
+            "ErrorCode": 0,
+            "LastHealthCheckInUTC": "2024-03-15T19:29:52.7280025Z"
+        },
+        "AdditionalDetails": null,
+        "IsProvisioningHealthCheck": false
+    },
+    {
+        "HealthCheckName": 2,
+        "HealthCheckResult": 1,
+        "AdditionalFailureDetails": {
+            "Message": "SessionHost healthy:FSLogix is healthy. healthy=true ProfileRegistryStatus=Enabled msg=FSLogixHealthCheck: healthy",
+            "ErrorCode": 0,
+            "LastHealthCheckInUTC": "2024-03-15T19:29:52.7280025Z"
+        },
+        "AdditionalDetails": null,
+        "IsProvisioningHealthCheck": false
+    },
+    {
+        "HealthCheckName": 3,
+        "HealthCheckResult": 1,
+        "AdditionalFailureDetails": {
+            "Message": "SessionHost healthy: SessionHost healthy: SxS stack listener is ready",
+            "ErrorCode": 0,
+            "LastHealthCheckInUTC": "2024-03-15T19:29:48.1078586Z"
+        },
+        "AdditionalDetails": null,
+        "IsProvisioningHealthCheck": false
+    },
+    {
+        "HealthCheckName": 4,
+        "HealthCheckResult": 1,
+        "AdditionalFailureDetails": {
+            "Message": "{\"AccessibleUrls\":[\"958fd028-d061-4cf0-aac9-5c77d96c9416.rdbroker-g-us-r1.wvd.microsoft.com\",\"958fd028-d061-4cf0-aac9-5c77d96c9416.rdbroker.wvd.microsoft.com\",\"958fd028-d061-4cf0-aac9-5c77d96c9416.rddiagnostics-g-us-r1.wvd.microsoft.com\",\"mrsglobalsteus2prod.blob.core.windows.net\",\"gcs.prod.monitoring.core.windows.net\",\"eastus2-shared.prod.warm.ingest.monitor.core.windows.net\",\"qos.prod.warm.ingest.monitor.core.windows.net\"],\"NotAccessibleUrls\":null,\"Context\":null}",
+            "ErrorCode": 0,
+            "LastHealthCheckInUTC": "2024-03-15T19:29:53.1813842Z"
+        },
+        "AdditionalDetails": null,
+        "IsProvisioningHealthCheck": false
+    },
+    {
+        "HealthCheckName": 5,
+        "HealthCheckResult": 1,
+        "AdditionalFailureDetails": {
+            "Message": "Located running process at C:\\Program Files\\Microsoft RDInfra\\RDMonitoringAgent_46.5.1\\Agent\\MonAgentLauncher.exe",
+            "ErrorCode": 0,
+            "LastHealthCheckInUTC": "2024-03-15T19:44:48.1594461Z"
+        },
+        "AdditionalDetails": null,
+        "IsProvisioningHealthCheck": false
+    },
+    {
+        "HealthCheckName": 6,
+        "HealthCheckResult": 1,
+        "AdditionalFailureDetails": {
+            "Message": "SessionHost healthy: the domain ≤corefamily.net≥ the SessionHost is joined to is reachable!",
+            "ErrorCode": 0,
+            "LastHealthCheckInUTC": "2024-03-15T19:29:52.7280025Z"
+        },
+        "AdditionalDetails": null,
+        "IsProvisioningHealthCheck": false
+    },
+    {
+        "HealthCheckName": 8,
+        "HealthCheckResult": 1,
+        "AdditionalFailureDetails": {
+            "Message": "SessionHost healthy: Sxs stack uses supported encryption",
+            "ErrorCode": 0,
+            "LastHealthCheckInUTC": "2024-03-15T19:29:51.8973986Z"
+        },
+        "AdditionalDetails": null,
+        "IsProvisioningHealthCheck": false
+    },
+    {
+        "HealthCheckName": 9,
+        "HealthCheckResult": 1,
+        "AdditionalFailureDetails": {
+            "Message": "{\r\n  \"Details\": \"IMDS pressumed available\",\r\n  \"AzureResourceId\": \"/subscriptions/8a0ecebc-0e1d-4e8f-8cb8-8a92f49455b9/resourceGroups/rg-eastus2-AVDLabVMs-GeneralUsers/providers/Microsoft.Compute/virtualMachines/avdgenusrvm-002\",\r\n  \"VmId\": \"4d5818fa-a729-4991-9897-3aba7a23764b\"\r\n}",
+            "ErrorCode": 0,
+            "LastHealthCheckInUTC": "2024-03-15T19:29:51.8973986Z"
+        },
+        "AdditionalDetails": null,
+        "IsProvisioningHealthCheck": false
+    },
+    {
+        "HealthCheckName": 10,
+        "HealthCheckResult": 1,
+        "AdditionalFailureDetails": {
+            "Message": "SessionHost healthy: MSIX packages have been properly staged",
+            "ErrorCode": 0,
+            "LastHealthCheckInUTC": "2024-03-15T19:55:47.2406983Z"
+        },
+        "AdditionalDetails": null,
+        "IsProvisioningHealthCheck": false
+    },
+    {
+        "HealthCheckName": 11,
+        "HealthCheckResult": 1,
+        "AdditionalFailureDetails": {
+            "Message": "NAT shape is Undetermined\nTURN relay health check for server [turn:20.202.248.2:3478?Udp] succeeded\n",
+            "ErrorCode": 0,
+            "LastHealthCheckInUTC": "2024-03-15T19:56:49.1342002Z"
+        },
+        "AdditionalDetails": null,
+        "IsProvisioningHealthCheck": false
+    },
+    {
+        "HealthCheckName": 16,
+        "HealthCheckResult": 1,
+        "AdditionalFailureDetails": {
+            "Message": "",
+            "ErrorCode": 0,
+            "LastHealthCheckInUTC": "2024-03-15T19:29:52.7280025Z"
+        },
+        "AdditionalDetails": null,
+        "IsProvisioningHealthCheck": false
+    }
+]
